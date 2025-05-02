@@ -15,3 +15,13 @@ if random_number == 1:
 elif random_number == 2:
     z = round(x) + round(y)
     print(f"{z:,} = round(x) + round(y)")
+
+
+
+x = 2
+y = 3
+z = x / y
+# 2 digits after the comma with the round function
+print(round(x / y, 2))
+# 2 digits after the comma with format strings
+print(f"{z:.2f}")
