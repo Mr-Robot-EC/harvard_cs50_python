@@ -1,9 +1,12 @@
 # Basic Types
 
-# str      String (text), e.g., "Hello, World!"
-# int      Integer (whole number), e.g., 42
-# float    Floating-point number (decimal), e.g., 3.14
-# bool     Boolean (True or False), e.g., True
+"""
+str
+int
+float
+bool
+list
+"""
 
 # user name
 name = input("What is your name? ")
