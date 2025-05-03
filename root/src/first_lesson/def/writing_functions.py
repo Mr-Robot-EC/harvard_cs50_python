@@ -1,27 +1,37 @@
 import sys
 
 def main():
-
+    sep = separate_line(15)
     print_tree()
 
-    separate_line(15)
+    print(sep)
+
     name = input("What is your name? ")
     hello(name)
 
-    separate_line(15)
+    print(sep)
+
     hello()
 
-    separate_line(15)
+    print(sep)
+
+    x = str_to_int_input()
+    print("x cube is", cube(x))
+
+    print(sep)
 
     is_main_running = input("Do you want to stop the main function? (y/n): ")
 
     if is_main_running == "y":
         print("Exiting main program..")
         sys.exit()
+
 def hello(to="world"):
     print(f"Hello, {to}!")
+
 def separate_line(n):
-    print("\n" + "*" * int(n) + "\n")
+    return "\n" + "*" * int(n) + "\n"
+
 def print_tree(floors="3", trunk="5"):
 
     is_print_tree_on = True
@@ -64,6 +74,17 @@ def print_tree(floors="3", trunk="5"):
             else:
                 print("Please enter two numbers separated by a comma")
 
+        except Exception as e:
+            print("An exception occurred:", e)
+
+def cube(n):
+    return n ** 3
+
+def str_to_int_input():
+    while True:
+        try:
+            x = int(input("Please enter a number to calculate the cube of it: "))
+            return x
         except Exception as e:
             print("An exception occurred:", e)
 
