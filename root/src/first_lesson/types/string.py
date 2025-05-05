@@ -5,7 +5,8 @@ str
 int
 float
 bool
-list
+list [1,2,3,4]
+dict {key:value}
 """
 
 # user name
