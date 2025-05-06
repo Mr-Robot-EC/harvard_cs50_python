@@ -1,4 +1,4 @@
-import random as r
+import from_keyword as r
 
 # libraries == modules => True
 """
