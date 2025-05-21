@@ -1,3 +1,14 @@
+#__init__.py
+"""
+It tells to the Python Interpreter to treat the 'folder' as a 'package'
+"""
+
+#package
+"""
+It can contains usually code that need to be executed.
+For example we create a folder test and we write inside some unit tests.
+"""
+
 from hello_world import hello
 
 def main():
