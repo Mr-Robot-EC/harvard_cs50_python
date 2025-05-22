@@ -3,7 +3,9 @@ import csv
 
 def main():
     #writing_csv(3)
-    print_wizards()
+    #print_wizards()
+    #print_wizards_dict()
+    print_sort_wizards()
 
 def writing_csv(n):
     data = []
@@ -44,6 +46,48 @@ def print_wizards():
 
     for wizard in sorted(wizards):
         print(wizard)
+
+
+def print_wizards_dict():
+
+    wizards_dict = {}
+
+    with open("wizards.csv", "r") as file:
+        for line in file:
+            name, house = line.rstrip().split(",")
+            wizards_dict[name] = house
+
+        for name, house in sorted(wizards_dict.items()):
+            print(f"{name}: {house}")
+
+
+def get_wizard_name(wizard):
+    return wizard["name"]
+
+
+def print_sort_wizards():
+    wizards = []
+
+    with open("wizards.csv", "r") as file:
+        for _ in file:
+            name, house = _.strip().split(",")
+            wizard = {"name": name, "house": house}
+            wizards.append(wizard)
+
+        # Python feature
+        """
+        Python allows you to pass [function] as [arguments] into others [functions]
+        
+        get_wizard_name -> function
+        sorted -> function
+        
+        We are passing [get_wizard_name] 
+        to [sorted] 
+        as [value] 
+        of the [key parameter]
+        """
+        for wizard in sorted(wizards, key=get_wizard_name):
+            print(f"{wizard['name']} -> {wizard['house']}")
 
 
 if __name__ == "__main__":
